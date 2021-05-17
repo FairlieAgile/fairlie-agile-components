@@ -3,6 +3,12 @@
     "angular.ng-template",
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner"
+    "firsttris.vscode-jest-runner",
+    "vscode-icons-team.vscode-icons",
+    "EditorConfig.EditorConfig",
+    "eamodio.gitlens",
+    "nrwl.angular-console",
+    "angular.ng-template",
+    "mutantdino.resourcemonitor"
   ]
 }
