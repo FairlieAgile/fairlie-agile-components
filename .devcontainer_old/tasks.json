@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ngserve",
+      "type": "shell",
+      "args": [
+        "start"
+      ],
+      "command": "npm",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": "\\b\\B",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": false,
+            "beginsPattern": "^.*NG Live Development Server*",
+            "endsPattern": "^.*webpack: Compiled successfully.*"
+          }
+        }
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "npm: start",
+      "detail": "ng serve --port 4200 --host 0.0.0.0"
+    }
+  ]
+}

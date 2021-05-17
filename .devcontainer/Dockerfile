@@ -1,33 +1,21 @@
-FROM node:lts
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/typescript-node/.devcontainer/base.Dockerfile
 
-# Configure apt
-ENV DEBIAN_FRONTEND=noninteractive
+# [Choice] Node.js version: 16, 14, 12
+ARG VARIANT="16-buster"
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 
-RUN apt-get update \
-    && apt-get -y install --no-install-recommends apt-utils 2>&1
+# [Optional] Uncomment this section to install additional OS packages.
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive
 
-# Verify git and needed tools are installed
 RUN apt-get install -y git procps
 
-# Remove outdated yarn from /opt and install via package
-# so it can be easily updated via apt-get upgrade yarn
+# [Optional] Uncomment if you want to install an additional version of node using nvm
+# ARG EXTRA_NODE_VERSION=10
+# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
-RUN rm -rf /opt/yarn-* \
- && rm -f /usr/local/bin/yarn \
- && rm -f /usr/local/bin/yarnpkg \
- && apt-get install -y curl apt-transport-https lsb-release \
- && curl -sS https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/pubkey.gpg | apt-key add - 2>/dev/null \
- && echo "deb https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
- && apt-get update \
- && apt-get -y install --no-install-recommends yarn
-# Install the Angular CLI
-RUN npm install -g @angular/cli
-RUN npm install -g nx
-# Clean up
-RUN apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
-ENV DEBIAN_FRONTEND=dialog
-# Expose port 4250
-EXPOSE 4250
-# Set the default shell to bash instead of sh
+# [Optional] Uncomment if you want to install more global node packages
+RUN su node -c "npm install -g @angular/cli"
+
+EXPOSE 4200
+
+ENV SHELL /bin/bash
