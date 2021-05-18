@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/demo', '<rootDir>/libs/ui/mat-incrementor'],
+  projects: [
+    '<rootDir>/apps/demo',
+    '<rootDir>/libs/ui/mat-incrementor',
+    '<rootDir>/libs/ui/material',
+  ],
 };

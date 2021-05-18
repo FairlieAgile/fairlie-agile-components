@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "fairlieagile/mat-incrementor": ["libs/ui/mat-incrementor/src/index.ts"]
+      "fairlieagile/mat-incrementor": ["libs/ui/mat-incrementor/src/index.ts"],
+      "@fairlie-agile-components/ui/material": ["libs/ui/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

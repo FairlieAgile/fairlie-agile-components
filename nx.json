@@ -28,6 +28,9 @@
     },
     "ui-mat-incrementor": {
       "tags": ["ui"]
+    },
+    "ui-material": {
+      "tags": ["ui"]
     }
   }
 }

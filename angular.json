@@ -50,7 +50,10 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -184,6 +187,31 @@
             "lintFilePatterns": [
               "libs/ui/mat-incrementor/src/**/*.ts",
               "libs/ui/mat-incrementor/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ui-material": {
+      "projectType": "library",
+      "root": "libs/ui/material",
+      "sourceRoot": "libs/ui/material/src",
+      "prefix": "fa",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/material"],
+          "options": {
+            "jestConfig": "libs/ui/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/material/src/**/*.ts",
+              "libs/ui/material/src/**/*.html"
             ]
           }
         }
