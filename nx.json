@@ -25,6 +25,9 @@
     "demo-e2e": {
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "ui-mat-incrementor": {
+      "tags": ["ui"]
     }
   }
 }

@@ -26,7 +26,8 @@
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -48,13 +49,8 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/demo/src/favicon.ico",
-              "apps/demo/src/assets"
-            ],
-            "styles": [
-              "apps/demo/src/styles.scss"
-            ],
+            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -119,9 +115,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/demo"
-          ],
+          "outputs": ["coverage/apps/demo"],
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
@@ -150,8 +144,46 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui-mat-incrementor": {
+      "projectType": "library",
+      "root": "libs/ui/mat-incrementor",
+      "sourceRoot": "libs/ui/mat-incrementor/src",
+      "prefix": "fa",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/ui/mat-incrementor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/mat-incrementor"],
+          "options": {
+            "jestConfig": "libs/ui/mat-incrementor/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/demo-e2e/**/*.{js,ts}"
+              "libs/ui/mat-incrementor/src/**/*.ts",
+              "libs/ui/mat-incrementor/src/**/*.html"
             ]
           }
         }
