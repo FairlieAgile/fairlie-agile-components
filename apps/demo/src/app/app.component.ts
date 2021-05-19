@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'fairlie-agile-components-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'demo';
+  isProduction: boolean = environment.production;
+  siteTitle: string = `${environment.siteName} - ${this.isProduction ? 'Production' : 'Test'}`;
 }

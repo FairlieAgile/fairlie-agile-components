@@ -1,24 +1,26 @@
-<fa-dev-container></fa-dev-container>
-<header class="flex">
-  <img alt="Nx logo" width="75" src="https://nx.dev/assets/images/nx-logo-white.svg" />
-  <h1>Welcome to {{ title }}!</h1>
-</header>
-<main>
-  <fa-mat-incrementor [max]="4" [value]="2"></fa-mat-incrementor>
-  <fa-mat-incrementor></fa-mat-incrementor>
-</main>
+<fa-dev-container [siteTitle]="siteTitle" [isProduction]="isProduction"></fa-dev-container>
+<div class="container">
+  <header class="flex">
+    <img alt="Nx logo" width="75" src="https://nx.dev/assets/images/nx-logo-white.svg" />
+    <h1>Welcome to {{ siteTitle }}!</h1>
+  </header>
+  <main>
+    <fa-mat-incrementor [max]="4" [value]="2"></fa-mat-incrementor>
+    <fa-mat-incrementor></fa-mat-incrementor>
+  </main>
 
-<mat-card>
-  <mat-card-title>Login</mat-card-title>
-  <mat-card-content>
-    <form fxLayout="column" fxLayoutAlign="center none">
-      <mat-form-field>
-        <input matInput placeholder="username" type="text" #username>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="password" type="text" #password>
-      </mat-form-field>
-    </form>
-    <button mat-raised-button>login</button>
-  </mat-card-content>
-</mat-card>
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form fxLayout="column" fxLayoutAlign="center none">
+        <mat-form-field>
+          <input matInput placeholder="username" type="text" #username>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="password" type="text" #password>
+        </mat-form-field>
+      </form>
+      <button mat-raised-button>login</button>
+    </mat-card-content>
+  </mat-card>
+</div>
