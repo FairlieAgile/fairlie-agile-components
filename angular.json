@@ -81,6 +81,27 @@
               ],
               "outputHashing": "all"
             },
+            "stage": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo/src/environments/environment.ts",
+                  "with": "apps/demo/src/environments/environment.stage.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -97,6 +118,9 @@
           "configurations": {
             "production": {
               "browserTarget": "demo:build:production"
+            },
+            "stage": {
+              "browserTarget": "demo:build:stage"
             },
             "development": {
               "browserTarget": "demo:build:development"
