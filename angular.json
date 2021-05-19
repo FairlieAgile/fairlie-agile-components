@@ -216,6 +216,46 @@
           }
         }
       }
+    },
+    "ui-dev-container": {
+      "projectType": "library",
+      "root": "libs/ui/dev-container",
+      "sourceRoot": "libs/ui/dev-container/src",
+      "prefix": "fa",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/ui/dev-container/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ui/dev-container/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ui/dev-container/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/dev-container"],
+          "options": {
+            "jestConfig": "libs/ui/dev-container/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/dev-container/src/**/*.ts",
+              "libs/ui/dev-container/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

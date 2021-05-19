@@ -31,6 +31,9 @@
     },
     "ui-material": {
       "tags": ["ui"]
+    },
+    "ui-dev-container": {
+      "tags": ["ui"]
     }
   }
 }

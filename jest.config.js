@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/demo',
     '<rootDir>/libs/ui/mat-incrementor',
     '<rootDir>/libs/ui/material',
+    '<rootDir>/libs/ui/dev-container',
   ],
 };
