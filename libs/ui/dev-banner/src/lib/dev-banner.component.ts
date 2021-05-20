@@ -1,8 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
-  OnInit
+  Input
 } from '@angular/core';
 
 @Component({
@@ -15,11 +14,7 @@ import {
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DevBannerComponent implements OnInit {
-  @Input() isProduction: boolean = true;
-  @Input() siteTitle: string = 'Production';
-
-  constructor() { }
-
-  ngOnInit(): void { }
+export class DevBannerComponent {
+  @Input() isProduction = true;
+  @Input() siteTitle = 'Production';
 }

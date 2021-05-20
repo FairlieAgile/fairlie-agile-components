@@ -8,5 +8,5 @@ import { environment } from './../environments/environment';
 })
 export class AppComponent {
   isProduction: boolean = environment.production;
-  siteTitle: string = `${environment.siteName} - ${environment.environment}`;
+  siteTitle = `${environment.siteName} - ${environment.environment}`;
 }

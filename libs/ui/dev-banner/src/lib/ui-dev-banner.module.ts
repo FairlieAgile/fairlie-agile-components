@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@fairlie-agile-components/ui/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DevBannerComponent } from './dev-banner.component';
 
 @NgModule({
-  imports: [CommonModule, MaterialModule],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+  ],
   declarations: [DevBannerComponent],
   exports: [DevBannerComponent],
 })

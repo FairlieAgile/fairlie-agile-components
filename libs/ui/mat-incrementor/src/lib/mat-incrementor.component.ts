@@ -22,58 +22,60 @@ import { ThemePalette } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatIncrementorComponent {
-  @Output() change = new EventEmitter<number>();
+  @Output() valueChanged = new EventEmitter<number>();
 
   myFormGroup = new FormGroup({
     formField: new FormControl()
   });
 
-  _value: number = 0;
-  private _step: number = 1;
-  private _min: number = 0;
-  private _max: number = Infinity;
-  private _wrap: boolean = false;
-  private _color: string = 'default';
+  _value = 0;
+  private _step = 1;
+  private _min = 0;
+  private _max = Infinity;
+  private _wrap = false;
+  private _color = 'default';
 
-  @Input('value')
-  set inputValue(_value: number) {
-    this._value = this.parseNumber(_value);
+  @Input()
+  set value(_value: number) {
+    this._value = _value;
   }
 
   @Input()
   set step(_step: number) {
-    this._step = this.parseNumber(_step);
+    this._step = _step;
   }
 
   @Input()
   set min(_min: number) {
-    this._min = this.parseNumber(_min);
+    this._min = _min;
   }
 
   @Input()
   set max(_max: number) {
-    this._max = this.parseNumber(_max);
+    this._max = _max;
   }
 
   @Input()
   set wrap(_wrap: boolean) {
-    this._wrap = this.parseBoolean(_wrap);
+    this._wrap = _wrap;
   }
 
-  validate(event: any) {
-    let value = this.parseNumber(event.target.value)
+  validate(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const value = this.parseNumber(input.value)
     if (value > this._max) {
       this._value = this._max;
     }
-    this.change.emit(this._value);
+    this.valueChanged.emit(this._value);
   }
 
-  private parseNumber(num: any): number {
-    return +num;
-  }
+  private parseNumber(input: string | number): number {
+    if (!input) return NaN;
 
-  private parseBoolean(bool: any): boolean {
-    return !!bool;
+    if (typeof input === 'string' && input.trim().length == 0) {
+      return NaN;
+    }
+    return Number(input);
   }
 
   decrementValue(): void {
@@ -81,7 +83,7 @@ export class MatIncrementorComponent {
     if (this._wrap) {
       this.wrapValue();
     }
-    this.change.emit(this._value);
+    this.valueChanged.emit(this._value);
   }
 
   incrementValue(): void {
@@ -89,7 +91,7 @@ export class MatIncrementorComponent {
     if (this._wrap) {
       this.wrapValue();
     }
-    this.change.emit(this._value);
+    this.valueChanged.emit(this._value);
   }
 
   private wrapValue(): number {
