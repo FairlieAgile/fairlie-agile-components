@@ -294,6 +294,46 @@
           }
         }
       }
+    },
+    "util-fa-tenant": {
+      "projectType": "library",
+      "root": "libs/util/fa-tenant",
+      "sourceRoot": "libs/util/fa-tenant/src",
+      "prefix": "fa-tenant",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/util/fa-tenant/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/fa-tenant"],
+          "options": {
+            "jestConfig": "libs/util/fa-tenant/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util/fa-tenant/src/**/*.ts",
+              "libs/util/fa-tenant/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

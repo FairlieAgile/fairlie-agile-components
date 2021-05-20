@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@fairlie-agile-components/ui/material';
 import { UiDevBannerModule } from '@fairlieagile/dev-banner';
 import { UiMatIncrementorModule } from '@fairlieagile/mat-incrementor';
+import { FaTenantModule } from '@fairlieagile/tenant';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FaTenantModule,
     UiMatIncrementorModule,
     UiDevBannerModule,
     MaterialModule,

@@ -14,7 +14,7 @@ This project was generated using [Nx](https://nx.dev).
 
 > ng generate @nrwl/angular:library --name=material --directory=ui --prefix=fa --strict --tags=ui --no-interactive
 
-
+> ng generate @nrwl/angular:library --name=fa-tenant --directory=util --addModuleSpec --buildable --importPath=@fairlieagile/tenant --prefix=fa-tenant --publishable --simpleModuleName --tags=util --no-interactive 
 
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
