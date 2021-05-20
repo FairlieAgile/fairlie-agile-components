@@ -1,5 +1,10 @@
 {
   "remote.extensionKind": {
     "msjsdiag.debugger-for-chrome": "ui"
-  }
+  },
+  "cSpell.words": [
+    "devkit",
+    "ngcc",
+    "packagr"
+  ]
 }
