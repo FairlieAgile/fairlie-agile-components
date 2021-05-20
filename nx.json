@@ -32,7 +32,7 @@
     "ui-material": {
       "tags": ["ui"]
     },
-    "ui-dev-container": {
+    "ui-dev-banner": {
       "tags": ["ui"]
     }
   }

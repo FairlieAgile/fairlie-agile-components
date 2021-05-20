@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from "@fairlie-agile-components/ui/material";
-import { UiDevContainerModule } from 'fairlieagile/dev-container';
-import { UiMatIncrementorModule } from "fairlieagile/mat-incrementor";
+import { MaterialModule } from '@fairlie-agile-components/ui/material';
+import { UiDevBannerModule } from '@fairlieagile/dev-banner';
+import { UiMatIncrementorModule } from '@fairlieagile/mat-incrementor';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,8 +12,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     UiMatIncrementorModule,
-    UiDevContainerModule,
-    MaterialModule
+    UiDevBannerModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
