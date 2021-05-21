@@ -5,8 +5,7 @@ export const environment = {
   production: false,
   environment: 'dev',
   tenants: [
-    { tenantId: 'tenant1', friendlyName: 'tenant 1', urls: ['localhost', 'tenant1.localhost'] },
-    { tenantId: 'tenant2', friendlyName: 'tenant 2', urls: ['tenant2.localhost'] },
+    { tenantId: 'tenant3', friendlyName: 'tenant 3', urls: ['tenant3.localhost'] },
   ]
 }
 

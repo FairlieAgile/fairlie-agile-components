@@ -49,7 +49,10 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
+            ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/demo/src/styles.scss"
@@ -99,11 +102,11 @@
               ],
               "outputHashing": "all"
             },
-            "tenant": {
+            "tenant3": {
               "fileReplacements": [
                 {
                   "replace": "apps/demo/src/environments/environment.ts",
-                  "with": "apps/demo/src/environments/environment.stage.ts"
+                  "with": "apps/demo/src/environments/environment.tenant3.ts"
                 }
               ],
               "buildOptimizer": false,
@@ -133,6 +136,9 @@
             "stage": {
               "browserTarget": "demo:build:stage"
             },
+            "tenant3": {
+              "browserTarget": "demo:build:tenant3"
+            },
             "development": {
               "browserTarget": "demo:build:development"
             }
@@ -156,7 +162,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo"],
+          "outputs": [
+            "coverage/apps/demo"
+          ],
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
@@ -185,7 +193,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/demo-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -213,7 +223,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/mat-incrementor"],
+          "outputs": [
+            "coverage/libs/ui/mat-incrementor"
+          ],
           "options": {
             "jestConfig": "libs/ui/mat-incrementor/jest.config.js",
             "passWithNoTests": true
@@ -238,7 +250,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/material"],
+          "outputs": [
+            "coverage/libs/ui/material"
+          ],
           "options": {
             "jestConfig": "libs/ui/material/jest.config.js",
             "passWithNoTests": true
@@ -278,7 +292,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/dev-banner"],
+          "outputs": [
+            "coverage/libs/ui/dev-banner"
+          ],
           "options": {
             "jestConfig": "libs/ui/dev-banner/jest.config.js",
             "passWithNoTests": true
@@ -318,7 +334,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/util/fa-tenant"],
+          "outputs": [
+            "coverage/libs/util/fa-tenant"
+          ],
           "options": {
             "jestConfig": "libs/util/fa-tenant/jest.config.js",
             "passWithNoTests": true
