@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/ui/material',
     '<rootDir>/libs/ui/dev-banner',
     '<rootDir>/libs/util/fa-tenant',
+    '<rootDir>/libs/util/fa-theme-picker',
   ],
 };

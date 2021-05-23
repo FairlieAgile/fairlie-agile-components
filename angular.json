@@ -337,6 +337,46 @@
           }
         }
       }
+    },
+    "util-fa-theme-picker": {
+      "projectType": "library",
+      "root": "libs/util/fa-theme-picker",
+      "sourceRoot": "libs/util/fa-theme-picker/src",
+      "prefix": "fa-theme-picker",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/util/fa-theme-picker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/fa-theme-picker"],
+          "options": {
+            "jestConfig": "libs/util/fa-theme-picker/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util/fa-theme-picker/src/**/*.ts",
+              "libs/util/fa-theme-picker/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

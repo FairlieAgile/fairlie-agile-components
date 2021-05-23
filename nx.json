@@ -37,6 +37,9 @@
     },
     "util-fa-tenant": {
       "tags": ["util"]
+    },
+    "util-fa-theme-picker": {
+      "tags": ["util"]
     }
   }
 }
