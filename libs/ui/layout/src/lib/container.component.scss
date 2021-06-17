@@ -1,0 +1,12 @@
+:host {
+  display              : grid;
+  grid-template-columns: [full-start] 1fr [content-start] min(1200px, 100%) [content-end] 1fr [full-end]
+}
+
+:host>* {
+  grid-column: content
+}
+
+:host[data-full=true]>* {
+  grid-column: full
+}

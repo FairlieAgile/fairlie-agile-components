@@ -18,6 +18,9 @@ This project was generated using [Nx](https://nx.dev).
 
 > ng generate @nrwl/angular:library --name=fa-theme-picker --directory=util --addModuleSpec --buildable --importPath=@fairlieagile/theme-picker --prefix=fa-theme-picker --publishable --simpleModuleName --tags=util --no-interactive
 
+> ng generate @nrwl/angular:library --name=layout --directory=ui --buildable --importPath=@fairlieagile/layout --prefix=fa --publishable --simpleModuleName --tags=ui --no-interactive
+> ng generate @schematics/angular:component --name=container --project=ui-layout --style=scss --changeDetection=OnPush --displayBlock --export --flat --inlineStyle --inlineTemplate --prefix=fa --no-interactive
+
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 

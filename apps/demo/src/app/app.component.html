@@ -1,26 +1,90 @@
 <fa-dev-banner [siteTitle]="siteTitle" [isProduction]="isProduction"></fa-dev-banner>
-<div class="container">
-  <header class="flex">
-    <img alt="Nx logo" width="75" src="https://nx.dev/assets/images/nx-logo-white.svg" />
-    <h1>Welcome to {{ siteTitle }}!</h1>
-  </header>
-  <main>
-    <fa-mat-incrementor [max]="4" [value]="2"></fa-mat-incrementor>
-    <fa-mat-incrementor></fa-mat-incrementor>
-  </main>
+<fa-container>
+  <fa-row>
+    <fa-column>
+      <header class="flex">
+        <img alt="Nx logo" width="75" src="https://nx.dev/assets/images/nx-logo-white.svg" />
+        <h1>Welcome to {{ siteTitle }}!</h1>
+      </header>
 
-  <mat-card>
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-content>
-      <form fxLayout="column" fxLayoutAlign="center none">
-        <mat-form-field>
-          <input matInput placeholder="username" type="text" #username>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="password" type="text" #password>
-        </mat-form-field>
-      </form>
-      <button mat-raised-button>login</button>
-    </mat-card-content>
-  </mat-card>
-</div>
+    </fa-column>
+  </fa-row>
+  <fa-row>
+    <fa-column>
+      <main>
+        <fa-mat-incrementor [max]="4" [value]="2"></fa-mat-incrementor>
+        <fa-mat-incrementor></fa-mat-incrementor>
+      </main>
+
+    </fa-column>
+    <fa-column>
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+          <form fxLayout="column" fxLayoutAlign="center none">
+            <mat-form-field>
+              <input matInput placeholder="username" type="text" #username>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="password" type="text" #password>
+            </mat-form-field>
+          </form>
+          <button mat-raised-button>login</button>
+        </mat-card-content>
+      </mat-card>
+
+    </fa-column>
+
+  </fa-row>
+  <fa-row>
+    <fa-column>1
+    </fa-column>
+    <fa-column>2
+    </fa-column>
+    <fa-column style="background-color: red;">3
+    </fa-column>
+  </fa-row>
+</fa-container>
+<fa-container [full]="true" style="background-color: #ccc;">
+  <fa-row>
+    <fa-column>1
+    </fa-column>
+    <fa-column>2
+    </fa-column>
+    <fa-column>3
+    </fa-column>
+  </fa-row>
+</fa-container>
+<fa-container [full]="true" style="background: linear-gradient( to right, #6ca439 0%, #6ca439 50%, #404f84 50%, #404f84 100% );
+    color: #fff">
+  <fa-container>
+    <fa-row>
+      <fa-column>1
+      </fa-column>
+      <fa-column>2
+      </fa-column>
+      <fa-column>3
+      </fa-column>
+    </fa-row>
+  </fa-container>
+</fa-container>
+<fa-container [full]="true" style="background: linear-gradient( to right, #ccc 0%, #6ca439 50%, #404f84 50%, #404f84 100% );
+    color: #fff;height: 40px;">
+  <fa-container>
+    <fa-row>
+      <fa-column>1
+      </fa-column>
+      <fa-column>2
+      </fa-column>
+    </fa-row>
+  </fa-container>
+</fa-container>
+
+<fa-container [full]="false">
+  <fa-row style="top: -20px;position: relative;background-color: red;height: 50px;">
+    <fa-column>1
+    </fa-column>
+    <fa-column>2
+    </fa-column>
+  </fa-row>
+</fa-container>

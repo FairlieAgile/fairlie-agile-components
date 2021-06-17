@@ -40,6 +40,9 @@
     },
     "util-fa-theme-picker": {
       "tags": ["util"]
+    },
+    "ui-layout": {
+      "tags": ["ui"]
     }
   }
 }

@@ -6,6 +6,7 @@ import { UiDevBannerModule } from '@fairlieagile/dev-banner';
 import { UiMatIncrementorModule } from '@fairlieagile/mat-incrementor';
 import { FaTenantModule } from '@fairlieagile/tenant';
 import { environment } from '../environments/environment';
+import { LayoutModule } from './../../../../libs/ui/layout/src/lib/layout.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
     UiMatIncrementorModule,
     UiDevBannerModule,
     MaterialModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],
