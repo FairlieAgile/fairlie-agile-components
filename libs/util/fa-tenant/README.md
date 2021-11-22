@@ -27,8 +27,8 @@ For development add the hosts that are allowed for your site in package.json
     export const environment = {
       ...
       tenants: [
-        { tenantId: 'tenant1', friendlyName: 'tenant 1', urls: ['localhost', 'tenant1.localhost'] },
-        { tenantId: 'tenant2', friendlyName: 'tenant 2', urls: ['tenant2.localhost'] }
+        { tenantId: 'tenant1', friendlyName: 'tenant 1', clientId: '', urls: ['localhost', 'tenant1.localhost'] },
+        { tenantId: 'tenant2', friendlyName: 'tenant 2', clientId: '', urls: ['tenant2.localhost'] }
       ]
     }
 ```
