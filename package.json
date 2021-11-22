@@ -29,7 +29,9 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "publish:layout": "cd libs/ui/layout && npm version patch --force && cd ../../.. && nx build ui-layout",
-    "deploy:layout": "npm run publish:layout && cd dist/libs/ui/layout && npm publish"
+    "deploy:layout": "npm run publish:layout && cd dist/libs/ui/layout && npm publish",
+    "publish:tenant": "cd libs/util/fa-tenant && npm version patch --force && cd ../../.. && nx build util-fa-tenant",
+    "deploy:tenant": "npm run publish:tenant && cd dist/libs/util/fa-tenant && npm publish"
   },
   "dependencies": {
     "@angular/animations": "12.0.0",

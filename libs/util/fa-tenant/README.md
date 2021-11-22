@@ -11,6 +11,9 @@ What you require is a multi-tenant/multi-site solution that can be controlled by
 This can be used in conjunction with the theme-picker to skin the sites differently.
 
 ## Setup
+Install
+> npm i @fairlieagile/tenant --save
+
 
 For development add the hosts that are allowed for your site in package.json
 

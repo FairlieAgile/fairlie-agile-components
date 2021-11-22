@@ -1,9 +1,17 @@
 {
   "name": "@fairlieagile/tenant",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^12.0.0",
     "@angular/core": "^12.0.0"
+  },
+  "homepage": "https://github.com/FairlieAgile/fairlie-agile-components/tree/main/libs/util/fa-tenant#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FairlieAgile/fairlie-agile-components"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "tslib": "^2.1.0"
