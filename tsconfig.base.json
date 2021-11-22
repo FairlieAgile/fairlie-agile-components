@@ -15,14 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fairlieagile/mat-incrementor": ["libs/ui/mat-incrementor/src/index.ts"],
       "@fairlie-agile-components/ui/material": [
         "libs/ui/material/src/index.ts"
       ],
       "@fairlieagile/dev-banner": ["libs/ui/dev-banner/src/index.ts"],
+      "@fairlieagile/layout": ["libs/ui/layout/src/index.ts"],
+      "@fairlieagile/mat-incrementor": ["libs/ui/mat-incrementor/src/index.ts"],
       "@fairlieagile/tenant": ["libs/util/fa-tenant/src/index.ts"],
-      "@fairlieagile/theme-picker": ["libs/util/fa-theme-picker/src/index.ts"],
-      "@fairlieagile/layout": ["libs/ui/layout/src/index.ts"]
+      "@fairlieagile/theme-picker": ["libs/util/fa-theme-picker/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

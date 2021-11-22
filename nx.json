@@ -14,35 +14,50 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "demo": {
-      "tags": []
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "demo",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "demo-e2e": {
-      "tags": [],
-      "implicitDependencies": ["demo"]
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "strict": true
     },
-    "ui-mat-incrementor": {
-      "tags": ["ui"]
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "strict": true
     },
-    "ui-material": {
-      "tags": ["ui"]
-    },
-    "ui-dev-banner": {
-      "tags": ["ui"]
-    },
-    "util-fa-tenant": {
-      "tags": ["util"]
-    },
-    "util-fa-theme-picker": {
-      "tags": ["util"]
-    },
-    "ui-layout": {
-      "tags": ["ui"]
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   }
 }

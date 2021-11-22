@@ -1,38 +1,5 @@
 {
   "version": 1,
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "defaultProject": "demo",
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress",
-      "strict": true
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "strict": true
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
   "projects": {
     "demo": {
       "projectType": "application",
@@ -155,7 +122,8 @@
               "apps/demo/src/**/*.ts",
               "apps/demo/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -165,7 +133,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "demo-e2e": {
       "root": "apps/demo-e2e",
@@ -189,74 +158,12 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "ui-mat-incrementor": {
-      "projectType": "library",
-      "root": "libs/ui/mat-incrementor",
-      "sourceRoot": "libs/ui/mat-incrementor/src",
-      "prefix": "fa",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "project": "libs/ui/mat-incrementor/ng-package.json"
           },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/mat-incrementor"],
-          "options": {
-            "jestConfig": "libs/ui/mat-incrementor/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/mat-incrementor/src/**/*.ts",
-              "libs/ui/mat-incrementor/src/**/*.html"
-            ]
-          }
+          "outputs": ["{options.outputFile}"]
         }
-      }
-    },
-    "ui-material": {
-      "projectType": "library",
-      "root": "libs/ui/material",
-      "sourceRoot": "libs/ui/material/src",
-      "prefix": "fa",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/material"],
-          "options": {
-            "jestConfig": "libs/ui/material/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui/material/src/**/*.ts",
-              "libs/ui/material/src/**/*.html"
-            ]
-          }
-        }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["demo"]
     },
     "ui-dev-banner": {
       "projectType": "library",
@@ -294,89 +201,11 @@
               "libs/ui/dev-banner/src/**/*.ts",
               "libs/ui/dev-banner/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
-    },
-    "util-fa-tenant": {
-      "projectType": "library",
-      "root": "libs/util/fa-tenant",
-      "sourceRoot": "libs/util/fa-tenant/src",
-      "prefix": "fa-tenant",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "project": "libs/util/fa-tenant/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/util/fa-tenant"],
-          "options": {
-            "jestConfig": "libs/util/fa-tenant/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/util/fa-tenant/src/**/*.ts",
-              "libs/util/fa-tenant/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "util-fa-theme-picker": {
-      "projectType": "library",
-      "root": "libs/util/fa-theme-picker",
-      "sourceRoot": "libs/util/fa-theme-picker/src",
-      "prefix": "fa-theme-picker",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "project": "libs/util/fa-theme-picker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/util/fa-theme-picker"],
-          "options": {
-            "jestConfig": "libs/util/fa-theme-picker/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/util/fa-theme-picker/src/**/*.ts",
-              "libs/util/fa-theme-picker/src/**/*.html"
-            ]
-          }
-        }
-      }
+      },
+      "tags": ["ui"]
     },
     "ui-layout": {
       "projectType": "library",
@@ -414,9 +243,164 @@
               "libs/ui/layout/src/**/*.ts",
               "libs/ui/layout/src/**/*.html"
             ]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": ["ui"]
+    },
+    "ui-mat-incrementor": {
+      "projectType": "library",
+      "root": "libs/ui/mat-incrementor",
+      "sourceRoot": "libs/ui/mat-incrementor/src",
+      "prefix": "fa",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/ui/mat-incrementor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ui/mat-incrementor/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/mat-incrementor"],
+          "options": {
+            "jestConfig": "libs/ui/mat-incrementor/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/mat-incrementor/src/**/*.ts",
+              "libs/ui/mat-incrementor/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": ["ui"]
+    },
+    "ui-material": {
+      "projectType": "library",
+      "root": "libs/ui/material",
+      "sourceRoot": "libs/ui/material/src",
+      "prefix": "fa",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/material"],
+          "options": {
+            "jestConfig": "libs/ui/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/material/src/**/*.ts",
+              "libs/ui/material/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": ["ui"]
+    },
+    "util-fa-tenant": {
+      "projectType": "library",
+      "root": "libs/util/fa-tenant",
+      "sourceRoot": "libs/util/fa-tenant/src",
+      "prefix": "fa-tenant",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/util/fa-tenant/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/util/fa-tenant/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/fa-tenant"],
+          "options": {
+            "jestConfig": "libs/util/fa-tenant/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util/fa-tenant/src/**/*.ts",
+              "libs/util/fa-tenant/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": ["util"]
+    },
+    "util-fa-theme-picker": {
+      "projectType": "library",
+      "root": "libs/util/fa-theme-picker",
+      "sourceRoot": "libs/util/fa-theme-picker/src",
+      "prefix": "fa-theme-picker",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/util/fa-theme-picker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/util/fa-theme-picker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/fa-theme-picker"],
+          "options": {
+            "jestConfig": "libs/util/fa-theme-picker/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util/fa-theme-picker/src/**/*.ts",
+              "libs/util/fa-theme-picker/src/**/*.html"
+            ]
+          },
+          "outputs": ["{options.outputFile}"]
+        }
+      },
+      "tags": ["util"]
     }
   }
 }
