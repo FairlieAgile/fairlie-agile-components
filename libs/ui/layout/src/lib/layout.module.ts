@@ -17,4 +17,4 @@ import { ColumnComponent } from './column.component';
     ColumnComponent
   ],
 })
-export class LayoutModule {}
+export class FaLayoutModule {}
