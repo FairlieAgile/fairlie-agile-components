@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'ui-layout',
+/* eslint-disable */
+export default {
+  displayName: 'ui-dev-banner',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/ui/layout',
+  coverageDirectory: '../../../coverage/libs/ui/dev-banner',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

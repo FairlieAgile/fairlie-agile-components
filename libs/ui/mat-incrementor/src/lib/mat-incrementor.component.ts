@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
@@ -24,8 +24,8 @@ import { ThemePalette } from '@angular/material/core';
 export class MatIncrementorComponent {
   @Output() valueChanged = new EventEmitter<number>();
 
-  myFormGroup = new FormGroup({
-    formField: new FormControl()
+  myFormGroup = new UntypedFormGroup({
+    formField: new UntypedFormControl()
   });
 
   _value = 0;

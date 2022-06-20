@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'util-fa-tenant',
+/* eslint-disable */
+export default {
+  displayName: 'ui-layout',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/util/fa-tenant',
+  coverageDirectory: '../../../coverage/libs/ui/layout',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

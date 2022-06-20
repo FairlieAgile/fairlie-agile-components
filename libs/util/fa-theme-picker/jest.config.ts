@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'ui-dev-banner',
+/* eslint-disable */
+export default {
+  displayName: 'util-fa-theme-picker',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/ui/dev-banner',
+  coverageDirectory: '../../../coverage/libs/util/fa-theme-picker',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
